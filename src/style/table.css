@@ -1,0 +1,8 @@
+.tablerow:hover{
+    transform: scale(1.2, 1.2);
+    cursor: grab;
+}
+
+.tablerow:hover::after {
+    opacity: 1;
+  }
