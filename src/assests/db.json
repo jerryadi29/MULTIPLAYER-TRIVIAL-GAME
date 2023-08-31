@@ -1,34 +1,50 @@
 {
-    "scorecard": [
-        {
-            "id": 1,
-            "name": "aditya",
-            "score": 20
-        },
-        {
-            "id": 2,
-            "name": "ganasai",
-            "score": 30
-        },
-        {
-            "id": 3,
-            "name": "tharun",
-            "score": 10
-        },
-        {
-            "id": 4,
-            "name": "ananthu",
-            "score": 44
-        },
-        {
-            "id": 5,
-            "name": "surapareddy",
-            "score": 98
-        },
-        {
-            "id": 6,
-            "name": "anup",
-            "score": 12
-        }
-    ]
+  "scorecard": [
+    {
+      "id": 1,
+      "name": "aditya",
+      "score": 20
+    },
+    {
+      "id": 2,
+      "name": "ganasai",
+      "score": 30
+    },
+    {
+      "id": 3,
+      "name": "tharun",
+      "score": 10
+    },
+    {
+      "id": 4,
+      "name": "ananthu",
+      "score": 44
+    },
+    {
+      "id": 5,
+      "name": "surapareddy",
+      "score": 98
+    },
+    {
+      "id": 6,
+      "name": "anup",
+      "score": 12
+    }
+  ],
+  "users": [
+    {
+      "firstname": "aditya",
+      "lastname": "rout",
+      "emailid": "adityarout291997@gmail.com",
+      "password": "Golu@9936",
+      "id": 1
+    },
+    {
+      "firstname": "jerry",
+      "lastname": "adi",
+      "emailid": "jerryadi@gmail.com",
+      "password": "Jerry@04",
+      "id": 2
+    }
+  ]
 }

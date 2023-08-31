@@ -1,11 +1,16 @@
-import LeaderBoardComponent from './component/leaderboard'; 
+import LeaderBoardComponent from './component/leaderboard';
 import './App.css';
+import { LoginComponent } from './component/login';
+import { RegistrationComponent } from './component/registration';
 
 function App() {
   return (
     <div className="App">
-        <LeaderBoardComponent>
-        </LeaderBoardComponent>
+
+      <RegistrationComponent></RegistrationComponent>
+        {/* <LoginComponent></LoginComponent> */}
+        {/* <LeaderBoardComponent>
+        </LeaderBoardComponent> */}
     </div>
   );
 }
