@@ -36,15 +36,672 @@
       "firstname": "aditya",
       "lastname": "rout",
       "emailid": "adityarout291997@gmail.com",
-      "password": "Golu@9936",
+      "password": "Idontknowmypassword",
       "id": 1
+    }
+  ],
+  "data": [
+    [
+      {
+        "id": 576,
+        "question": "How can we add comments in PHP?",
+        "description": null,
+        "answers": {
+          "answer_a": "// commented code to end of line",
+          "answer_b": "/* commented code here */",
+          "answer_c": "# commented code to end of line",
+          "answer_d": "all of the above",
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "false",
+          "answer_b_correct": "false",
+          "answer_c_correct": "false",
+          "answer_d_correct": "true",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_a",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+          {
+            "name": "PHP"
+          }
+        ],
+        "category": "Code",
+        "difficulty": "Medium"
+      },
+      {
+        "id": 959,
+        "question": "What can you deploy on Kubernetes?",
+        "description": null,
+        "answers": {
+          "answer_a": "Containers",
+          "answer_b": "Virtual machines",
+          "answer_c": null,
+          "answer_d": null,
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "true",
+          "answer_b_correct": "false",
+          "answer_c_correct": "false",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": null,
+        "explanation": null,
+        "tip": null,
+        "tags": [
+          {
+            "name": "Kubernetes"
+          }
+        ],
+        "category": "DevOps",
+        "difficulty": "Easy"
+      },
+      {
+        "id": 646,
+        "question": "How do we create command aliases in a shell?",
+        "description": null,
+        "answers": {
+          "answer_a": "alias Aliasname=\"Command whose alias is to be created\"",
+          "answer_b": "set alias Aliasname=\"Command whose alias is to be created\"",
+          "answer_c": "We can't create aliases directly in shell",
+          "answer_d": "configure Aliasname=\"Command whose alias is to be created\"",
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "true",
+          "answer_b_correct": "false",
+          "answer_c_correct": "false",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_a",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+          {
+            "name": "BASH"
+          }
+        ],
+        "category": "Linux",
+        "difficulty": "Easy"
+      },
+      {
+        "id": 405,
+        "question": "The program called MySQL is",
+        "description": null,
+        "answers": {
+          "answer_a": "There Isn't A Program Just Called Mysql",
+          "answer_b": "A Client Program That Lets You Send SQL Commands To The Database Engine",
+          "answer_c": "The Database Engine",
+          "answer_d": "A Wrapper Through Which Java Clients Must Connect To The Databases  The Database Engine",
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "false",
+          "answer_b_correct": "true",
+          "answer_c_correct": "false",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_a",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+          {
+            "name": "MySQL"
+          }
+        ],
+        "category": "SQL",
+        "difficulty": "Easy"
+      },
+      {
+        "id": 1054,
+        "question": "Which command would you use to gather facts with Ansible?",
+        "description": null,
+        "answers": {
+          "answer_a": "ansible your_server -m gather",
+          "answer_b": "ansible your_server -m setup",
+          "answer_c": "ansible your_server -m info",
+          "answer_d": "ansible your_server -m fact",
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "false",
+          "answer_b_correct": "true",
+          "answer_c_correct": "false",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_a",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+          {
+            "name": "DevOps"
+          }
+        ],
+        "category": "DevOps",
+        "difficulty": "Easy"
+      },
+      {
+        "id": 838,
+        "question": "Docker host's IP address by default is 192.168.99.100",
+        "description": null,
+        "answers": {
+          "answer_a": "True",
+          "answer_b": "False",
+          "answer_c": null,
+          "answer_d": null,
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "true",
+          "answer_b_correct": "false",
+          "answer_c_correct": "false",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": null,
+        "explanation": null,
+        "tip": null,
+        "tags": [
+          {
+            "name": "Docker"
+          }
+        ],
+        "category": "Docker",
+        "difficulty": "Easy"
+      },
+      {
+        "id": 509,
+        "question": "<TD> … </TD> tag is used for ________",
+        "description": null,
+        "answers": {
+          "answer_a": "Table heading",
+          "answer_b": "none of the above",
+          "answer_c": "Table row",
+          "answer_d": "Table Records",
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "false",
+          "answer_b_correct": "false",
+          "answer_c_correct": "false",
+          "answer_d_correct": "true",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_a",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+          {
+            "name": "HTML"
+          }
+        ],
+        "category": "Code",
+        "difficulty": "Medium"
+      },
+      {
+        "id": 798,
+        "question": "How to check for Docker Client and Docker Server version?",
+        "description": null,
+        "answers": {
+          "answer_a": "udo docker -p",
+          "answer_b": "docker version",
+          "answer_c": "docker -v",
+          "answer_d": null,
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "false",
+          "answer_b_correct": "true",
+          "answer_c_correct": "false",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_a",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+          {
+            "name": "Docker"
+          }
+        ],
+        "category": "Docker",
+        "difficulty": "Medium"
+      },
+      {
+        "id": 47,
+        "question": "What is the name of a Linux utility used for managing software packages on Red Hat and Red Hat-based Linux distributions?",
+        "description": null,
+        "answers": {
+          "answer_a": "yum",
+          "answer_b": "apt",
+          "answer_c": "apt-get",
+          "answer_d": "grub",
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "false",
+          "answer_b_correct": "false",
+          "answer_c_correct": "false",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_a",
+        "explanation": null,
+        "tip": null,
+        "tags": [],
+        "category": "Linux",
+        "difficulty": "Easy"
+      },
+      {
+        "id": 354,
+        "question": "Which of the following SQL statements will generate an error when executed.",
+        "description": null,
+        "answers": {
+          "answer_a": "CREATE DATABASE students",
+          "answer_b": "IF NOT EXISTS CREATE DATABASE `STUDENTS`;",
+          "answer_c": "CREATE DATABASE students;",
+          "answer_d": "create database if not exists students",
+          "answer_e": "select * from students where student_id=%23;",
+          "answer_f": "select * from students student_id=23;"
+        },
+        "multiple_correct_answers": "true",
+        "correct_answers": {
+          "answer_a_correct": "false",
+          "answer_b_correct": "true",
+          "answer_c_correct": "false",
+          "answer_d_correct": "false",
+          "answer_e_correct": "true",
+          "answer_f_correct": "true"
+        },
+        "correct_answer": "answer_a",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+          {
+            "name": "MySQL"
+          }
+        ],
+        "category": "SQL",
+        "difficulty": "Medium"
+      },
+      {
+        "id": 408,
+        "question": "Which of these is not a valid name for a column",
+        "description": null,
+        "answers": {
+          "answer_a": "To",
+          "answer_b": "Near",
+          "answer_c": "Far",
+          "answer_d": "From",
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "false",
+          "answer_b_correct": "false",
+          "answer_c_correct": "false",
+          "answer_d_correct": "true",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_a",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+          {
+            "name": "MySQL"
+          }
+        ],
+        "category": "SQL",
+        "difficulty": "Easy"
+      },
+      {
+        "id": 175,
+        "question": "What is Docker Swarm?",
+        "description": null,
+        "answers": {
+          "answer_a": "Container orchestration tool",
+          "answer_b": "Container registry",
+          "answer_c": "Text document that contains all the commands",
+          "answer_d": null,
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "true",
+          "answer_b_correct": "false",
+          "answer_c_correct": "false",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_a",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+          {
+            "name": "Docker"
+          }
+        ],
+        "category": "Docker",
+        "difficulty": "Easy"
+      },
+      {
+        "id": 96,
+        "question": "Which of the following method can be used to close a MySql database using PHP?",
+        "description": null,
+        "answers": {
+          "answer_a": "mysql_connect()",
+          "answer_b": "mysql_close()",
+          "answer_c": "mysql_query()",
+          "answer_d": "None of the above",
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "false",
+          "answer_b_correct": "true",
+          "answer_c_correct": "false",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_b",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+          {
+            "name": "PHP"
+          }
+        ],
+        "category": "",
+        "difficulty": "Medium"
+      },
+      {
+        "id": 861,
+        "question": "How to show the logs of the docker container with contained id mentioned in the command.",
+        "description": null,
+        "answers": {
+          "answer_a": "$ docker logs 09ca6feb6efc",
+          "answer_b": "$ docker ---logs 09ca6feb6efc",
+          "answer_c": "$ docker log 09ca6feb6efc",
+          "answer_d": null,
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "true",
+          "answer_b_correct": "false",
+          "answer_c_correct": "false",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_a",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+          {
+            "name": "Docker"
+          }
+        ],
+        "category": "Docker",
+        "difficulty": "Medium"
+      },
+      {
+        "id": 367,
+        "question": "Wildcards are",
+        "description": null,
+        "answers": {
+          "answer_a": "not supported by MySQL",
+          "answer_b": "characters such as % which perform single character matching",
+          "answer_c": "characters such as $ which perform pattern matches",
+          "answer_d": "used to perform pattern matches",
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "false",
+          "answer_b_correct": "false",
+          "answer_c_correct": "true",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_a",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+          {
+            "name": "MySQL"
+          }
+        ],
+        "category": "SQL",
+        "difficulty": "Medium"
+      },
+      {
+        "id": 1049,
+        "question": "Which command will you use to run a playbook called install.yaml with Ansible?",
+        "description": null,
+        "answers": {
+          "answer_a": "ansible-playbook install.yml",
+          "answer_b": "ansible install.yml",
+          "answer_c": "ansible --playbook install.yml",
+          "answer_d": "ansible -p install.yml",
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "true",
+          "answer_b_correct": "false",
+          "answer_c_correct": "false",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_a",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+          {
+            "name": "DevOps"
+          }
+        ],
+        "category": "DevOps",
+        "difficulty": "Easy"
+      },
+      {
+        "id": 404,
+        "question": "Which of the following is NOT available in MySQL:",
+        "description": null,
+        "answers": {
+          "answer_a": "REVOKE",
+          "answer_b": "JOIN",
+          "answer_c": "LIKE",
+          "answer_d": "FETCH",
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "false",
+          "answer_b_correct": "false",
+          "answer_c_correct": "false",
+          "answer_d_correct": "true",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_a",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+          {
+            "name": "MySQL"
+          }
+        ],
+        "category": "SQL",
+        "difficulty": "Medium"
+      },
+      {
+        "id": 719,
+        "question": "The kube-apiserver on Kubernetes master is designed to scale:",
+        "description": null,
+        "answers": {
+          "answer_a": "Vertically",
+          "answer_b": "Horizontally",
+          "answer_c": "kube-apiserver is not used for scaling",
+          "answer_d": null,
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "false",
+          "answer_b_correct": "true",
+          "answer_c_correct": "false",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_a",
+        "explanation": "The Kubernetes API server validates and configures data for the api objects which include pods, services, replicationcontrollers, and others. The API Server services REST operations and provides the frontend to the cluster’s shared state through which all other components interact.",
+        "tip": null,
+        "tags": [
+          {
+            "name": "Kubernetes"
+          }
+        ],
+        "category": "Linux",
+        "difficulty": "Easy"
+      },
+      {
+        "id": 99,
+        "question": "What is PHP heredoc used for?",
+        "description": null,
+        "answers": {
+          "answer_a": "allows creating single line of string without using quotations",
+          "answer_b": "allows creating multiple lines of string without using quotations",
+          "answer_c": "allows creating multiple lines of string with quotations",
+          "answer_d": "allows creating single lines of string with using quotations",
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "false",
+          "answer_b_correct": "true",
+          "answer_c_correct": "false",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": "answer_b",
+        "explanation": null,
+        "tip": null,
+        "tags": [
+          {
+            "name": "PHP"
+          }
+        ],
+        "category": "",
+        "difficulty": "Medium"
+      },
+      {
+        "id": 1080,
+        "question": "Which command do we need to use if we want to see all packages installed on the system (Ubuntu)",
+        "description": null,
+        "answers": {
+          "answer_a": "dpkg -l",
+          "answer_b": "packageall -l",
+          "answer_c": "dpkg -a",
+          "answer_d": null,
+          "answer_e": null,
+          "answer_f": null
+        },
+        "multiple_correct_answers": "false",
+        "correct_answers": {
+          "answer_a_correct": "true",
+          "answer_b_correct": "false",
+          "answer_c_correct": "false",
+          "answer_d_correct": "false",
+          "answer_e_correct": "false",
+          "answer_f_correct": "false"
+        },
+        "correct_answer": null,
+        "explanation": null,
+        "tip": null,
+        "tags": [
+          {
+            "name": "Linux"
+          }
+        ],
+        "category": "Linux",
+        "difficulty": "Easy"
+      }
+    ],
+    {
+      "id": 2
     },
     {
-      "firstname": "jerry",
-      "lastname": "adi",
-      "emailid": "jerryadi@gmail.com",
-      "password": "Jerry@04",
-      "id": 2
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
     }
   ]
 }

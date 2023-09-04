@@ -2,9 +2,14 @@ import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 import http from '../http';
+import { calculateNewValue } from "@testing-library/user-event/dist/utils";
+import NavigationComponent from "../routes/Navigation";
 
 export const RegistrationComponent = () => {
+
+    const navigate = useNavigate();
 
 
     const { register, control, handleSubmit, formState: { errors } } = useForm({
@@ -19,7 +24,7 @@ export const RegistrationComponent = () => {
 
 
     const onSubmit = async (data) => {
-        console.log(data);
+
         let res
         try {
             res = await http.post('/users',
@@ -30,10 +35,15 @@ export const RegistrationComponent = () => {
                 }
             );
 
-            if (res.status == 200) {
+
+
+            if (res.status == 201) {
                 toast.success('successfully registered', {
                     position: toast.POSITION.BOTTOM_CENTER
                 });
+                setTimeout(() => {
+                    navigate('/leaderboard');
+                }, 1000)
             }
 
 
@@ -48,6 +58,11 @@ export const RegistrationComponent = () => {
     }
     return (
         <>
+
+            
+
+
+
             <form onSubmit={handleSubmit(onSubmit)} noValidate >
                 <label htmlFor="firstname">FIRST NAME :</label>
                 <br />

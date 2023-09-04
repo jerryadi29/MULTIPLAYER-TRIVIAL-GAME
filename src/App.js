@@ -1,16 +1,14 @@
-import LeaderBoardComponent from './component/leaderboard';
 import './App.css';
-import { LoginComponent } from './component/login';
-import { RegistrationComponent } from './component/registration';
-
+import NavigationComponent from './routes/Navigation';
+import RoutesComponent from './routes/routes';
+import { BrowserRouter } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
+        <RoutesComponent></RoutesComponent>
+      </BrowserRouter>
 
-      <RegistrationComponent></RegistrationComponent>
-        {/* <LoginComponent></LoginComponent> */}
-        {/* <LeaderBoardComponent>
-        </LeaderBoardComponent> */}
     </div>
   );
 }
