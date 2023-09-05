@@ -3,6 +3,11 @@ import { NavLink } from 'react-router-dom';
 
 
 
+
+//new line add
+
+
+
 export default function NavigationComponent(props) {
     const {htp,profile,signup,home,leaderboard}=props.current;
     console.log(props.current)

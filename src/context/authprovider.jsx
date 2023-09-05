@@ -7,6 +7,7 @@ export const AuthProviderComponent=({children})=>{
 
     return(
         <>
+        
         <AuthContext.Provider value={{auth,setauth}}>
             {children}
         </AuthContext.Provider>
