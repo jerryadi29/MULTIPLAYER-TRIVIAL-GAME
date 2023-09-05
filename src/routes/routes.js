@@ -18,7 +18,7 @@ export default function RoutesComponent() {
 
       <Routes>
         <Route path='/' element={<HomeComponent></HomeComponent>} >
-         
+
         </Route>
 
         <Route path='registration' element={<RegistrationComponent></RegistrationComponent>} />
@@ -28,8 +28,17 @@ export default function RoutesComponent() {
         <Route path='howtoplay' element={<HowTopPlayComponent></HowTopPlayComponent>}></Route>
 
         <Route path='profile-page' element={<ProfileComponent></ProfileComponent>}>
-            <Route path='game/:name' element={<GameComponent></GameComponent>} />
+          
         </Route>
+        <Route path='profile-page/:gameId' element={<GameComponent></GameComponent>} />
+
+
+
+
+
+
+
+
 
       </Routes>
     </>

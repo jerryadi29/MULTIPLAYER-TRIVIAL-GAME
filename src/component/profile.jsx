@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom'
-import GameComponent from './game';
-import getQuizData from '../services/clientCall';
+import {getQuizData} from '../services/clientCall';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -15,16 +14,16 @@ import { useNavigate } from "react-router-dom";
 export default function ProfileComponent() {
 
     const Navigate=useNavigate();
-    let [data, setData] = useState([]);
-    let [categories, setCategories] = useState([])
+    let [categories, setCategories] = useState([]);
+   
 
     useEffect(() => {
-        let tempCat = []
+        let tempCat = [];
         let result = getQuizData().then((res) => {
-            setData(res);
+            
             
             tempCat = res.map((item) => {
-            
+                
                 return item.category;
             })
 
@@ -34,12 +33,14 @@ export default function ProfileComponent() {
 
         })
 
+
     }, [])
 
 
     const handleChange = (e) => {
-        console.log(e.target.value);
-        Navigate('/game/'+e.target.value);
+        console.log(e.target);
+        Navigate(e.target.value)
+       
     }
 
    
@@ -62,8 +63,8 @@ export default function ProfileComponent() {
                         onChange={handleChange}
                     >
                         {
-                            categories.map((category) => {
-                                return <MenuItem value={category}>{category}</MenuItem>
+                            categories.map((category,idx) => {
+                                return <MenuItem key={idx}  value={category}>{category}</MenuItem>
                             })
                         }
                     </Select>
