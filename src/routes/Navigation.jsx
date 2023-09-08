@@ -4,8 +4,6 @@ import { NavLink } from 'react-router-dom';
 
 
 
-//new line add
-
 
 
 export default function NavigationComponent(props) {
