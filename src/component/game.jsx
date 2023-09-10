@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { useParams, useSearchParams } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { getQuizCategoryData } from '../services/clientCall';
 import GamePlay from './gameplay';
 
@@ -11,18 +11,21 @@ export default function GameComponent() {
     const [val, setVal] = useState('');
     const [correctVal, setCorrectVal] = useState();
     const [score, setScore] = useState(0);
-    const [timer, setTimer] = useState(3);
-    const [next, setNext] = useState({ cnt: 0, status: false, idx: 0 });
+    const [timer, setTimer] = useState(10);
+    const [next, setNext] = useState({ status: false, idx: 1,end:false });
+ 
 
-
+    const ref=useRef();
+    const navigate=useNavigate();
 
 
     useEffect(() => {
-        let apiCall=false
+        let apiCall=false;
         const datasetter = async () => {
-            console.log(paramName.gameId)
+        
             try {
                 let res = await getQuizCategoryData(paramName.gameId);
+                console.log(res);
                 setData(res);
                 apiCall=true;
                 setVal(res[next.idx]);
@@ -33,6 +36,8 @@ export default function GameComponent() {
         }
 
         datasetter();
+      
+
         
 
       return ()=>{
@@ -43,45 +48,54 @@ export default function GameComponent() {
 
 
     }, []);
-    let changeQtn;
 
-    useEffect(() => {
 
-         changeQtn = setInterval(() => {
+  
+
+    useEffect(()=> {
+
+        ref.current = setInterval(() => {
             setTimer(timer - 1);
-        }, 1000)
 
-        handleQuestion();
+          
+        }, 1000);
 
+        
+        
+     
+        handleQuestion()
+        if(next.idx>=20 || next.end){
+            navigate('/leaderboard');
+        }
        
 
-
-     
-
-        return()=>{
-            clearInterval(changeQtn);
-        }   
-        
+        return ()=>{
+            clearInterval( ref.current );
+        } 
 
 
-
-    }, [timer])
+    }, [timer]);
 
     const handleQuestion=()=>{
         
-        if ( next.status==true|| timer == 0) {
-            console.log(timer)
-            setTimer(3);
-
+        if ( next.status===true|| timer === 0) {
            
-                clearInterval(changeQtn);
+            setTimer(10);
             
-            
-            
+            if(next.status===true){
+                
+               
+            } 
+           
             next.idx += 1;
             setNext({ ...next,idx: next.idx });
-            setVal(data[next.idx]);
-        }
+            let currentVal=data[next.idx]
+            setVal(currentVal);
+            setCorrectVal(currentVal.correct_answer);
+           
+           
+        }  
+        
 
     }
 
@@ -103,8 +117,10 @@ export default function GameComponent() {
                 <span>Qtn {next.idx}/{data.length}</span>
                 <br />
 
+            
+
                 
-                <GamePlay details={{ val, setCorrectVal, setScore }}></GamePlay>
+                <GamePlay details={{ val, correctVal,score, setScore }}></GamePlay>
 
 
                 <button onClick={() => {
@@ -115,6 +131,13 @@ export default function GameComponent() {
                
                     
                 }}>Next</button>
+
+
+                <button onClick={()=>{
+                    next.end=true
+                    setNext( {...next,end:next.end})}}>
+                    submit 
+                </button>
             </div>
         </>
 
