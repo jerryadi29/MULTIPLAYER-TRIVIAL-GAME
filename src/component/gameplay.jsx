@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '@mui/material/Button';
+
 
 
 export default function GamePlay(props) {
@@ -13,8 +13,8 @@ export default function GamePlay(props) {
     const handleAnswers = (e) => {
         if(e.target.className===correctVal){
             setScore((score)=>score+1);
-            console.log('right');
-       
+            
+            
         }
         else{
             console.log('wrong')
