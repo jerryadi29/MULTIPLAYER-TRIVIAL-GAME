@@ -3,7 +3,7 @@ import React from 'react';
 
 
 export default function GamePlay(props) {
-    const { val, correctVal,score, setScore } = props.details;
+    const { val, correctVal,score, setScore,handleQuestion,setNext,next } = props.details;
     const options = { ...val.answers };
     const option= Object.entries(options);
     
@@ -13,12 +13,14 @@ export default function GamePlay(props) {
     const handleAnswers = (e) => {
         if(e.target.className===correctVal){
             setScore((score)=>score+1);
-            
+            setNext({...next,status:true});
+            handleQuestion();
             
         }
         else{
-            console.log('wrong')
-         
+            console.log('wrong');
+            setNext({...next,status:true});
+            handleQuestion();
         }
 
     }
