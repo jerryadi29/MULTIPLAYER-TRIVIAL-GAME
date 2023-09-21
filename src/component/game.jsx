@@ -11,7 +11,7 @@ export default function GameComponent() {
     const [val, setVal] = useState('');
     const [correctVal, setCorrectVal] = useState();
     const [score, setScore] = useState(0);
-    const [timer, setTimer] = useState(10);
+    const [timer, setTimer] = useState(100);
     const [next, setNext] = useState({ status: false, idx: 1, end: false });
 
 
@@ -69,7 +69,7 @@ export default function GameComponent() {
        
 
 
-        if (next.idx >= 20 || next.end) {
+        if (next.idx >= 19 || next.end) {
             navigate('/leaderboard');
         }
 
@@ -83,7 +83,7 @@ export default function GameComponent() {
 
     const handleQuestion = () => {
 
-            setTimer(10); 
+            setTimer(100); 
             next.idx += 1;
             setNext({ ...next, idx: next.idx });
             let currentVal = data[next.idx]
@@ -96,6 +96,9 @@ export default function GameComponent() {
 
     return (
         <>
+           
+
+           
 
             <div className='quiz-game'>
 

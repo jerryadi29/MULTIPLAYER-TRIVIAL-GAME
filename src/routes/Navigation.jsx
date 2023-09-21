@@ -1,5 +1,23 @@
 import React from 'react'
+import { Typography, AppBar, Toolbar, IconButton,Stack,Button } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { NavLink } from 'react-router-dom';
+
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#03a9f4',
+            main: '#c9a2ff'
+        }
+    },
+
+})
+
+const style={
+    color:'white',
+    textDecoration:'none'
+}
 
 
 
@@ -7,44 +25,81 @@ import { NavLink } from 'react-router-dom';
 
 
 export default function NavigationComponent(props) {
-    const {htp,profile,signup,home,leaderboard}=props.current;
-    console.log(props.current)
+    const { htp, profile, signup, home, leaderboard } = props.current;
+
     return (
 
+        <ThemeProvider theme={theme}>
+            <AppBar color='primary' position='fixed' sx={{ height: '8vh',display:'flex',flexDirection:'row-reverse'}}>
+              
 
-        <nav>
-            {home ? null :
-                <NavLink to='/'>
-                    Home
-                </NavLink>}
+                    <Toolbar>
 
-            {leaderboard ? null :
-                <NavLink to='/leaderboard'>
-                    Leader Board
-                </NavLink>}
-
-            {htp ? null :
-                <NavLink to='/howtoplay'>
-                    How to play
-                </NavLink>
-            }
-
-            {profile ? null :
-                <NavLink to='/profile-page'>
-                    User Profile
-                </NavLink>
-            }
-
-            {signup ?null :
-                <NavLink to='/registration'>
-                Sign Up
-            </NavLink>
-            }
-          
-        </nav>
+                    <Typography variant='h6' component='h6' gutterBottom='h6'>
+                        <Stack spacing={0.5} direction='row'  >
 
 
+                        <Button variant="text" >
+                                {home ? null :
+                                    <NavLink to='/' style={style}>
+                                        Home
+                                    </NavLink>}
+                        </Button>
 
+                            
+
+                        <Button variant='text'>
+                           
+                                {leaderboard ? null :
+                                    <NavLink to='/leaderboard' style={style}>
+                                        Leader Board
+                                    </NavLink>}
+                        </Button>            
+
+
+                        
+                        <Button variant='text' >
+                                {htp ? null :
+                                    <NavLink to='/howtoplay' style={style}>
+                                        How to play
+                                    </NavLink>
+                                }
+                        </Button>   
+
+
+
+           
+                        <Button variant='text' >
+                                {profile ? null :
+                                    <NavLink to='/profile-page' style={style}>
+                                        User Profile
+                                    </NavLink>
+                                }
+                           </Button> 
+
+
+                        <Button variant='text' >
+                           
+                                {signup ? null :
+                                    <NavLink to='/registration' style={style}>
+                                        Sign Up
+                                    </NavLink>
+                                }
+                        </Button> 
+
+
+
+                        </Stack>
+                        </Typography>
+
+                    </Toolbar>
+
+
+
+
+             
+            </AppBar>
+        </ThemeProvider>
 
 
 

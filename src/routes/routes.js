@@ -1,3 +1,4 @@
+import React, { Suspense, lazy } from 'react'
 import LeaderBoardComponent from '../component/leaderboard';
 import { LoginComponent } from '../component/login';
 import { RegistrationComponent } from '../component/registration';
@@ -6,8 +7,10 @@ import GameComponent from '../component/game';
 import { HowTopPlayComponent } from '../component/howtoplay';
 import ProfileComponent from '../component/profile';
 import { Route, Routes } from 'react-router-dom';
-import React from 'react'
 import NavigationComponent from './Navigation';
+import { Typography } from '@mui/material';
+
+const LazyGameComponent = lazy(() =>  import('../component/game') )
 
 
 export default function RoutesComponent() {
@@ -16,6 +19,7 @@ export default function RoutesComponent() {
       <NavigationComponent current={{ home: false, htp: false, leaderboard: false, profile: false, signup: false }}></NavigationComponent>
 
 
+ 
       <Routes>
         <Route path='/' element={<HomeComponent></HomeComponent>} >
 
@@ -28,19 +32,21 @@ export default function RoutesComponent() {
         <Route path='howtoplay' element={<HowTopPlayComponent></HowTopPlayComponent>}></Route>
 
         <Route path='profile-page' element={<ProfileComponent></ProfileComponent>}>
-          
+
         </Route>
-        <Route path='profile-page/:gameId' element={<GameComponent></GameComponent>} />
+        <Route path='profile-page/:gameId' element={
+          <Suspense fallback='Loading.....'>
+            <LazyGameComponent></LazyGameComponent>
+          </Suspense>
 
 
-
-
-
+        } />
 
 
 
 
       </Routes>
+
     </>
 
   )

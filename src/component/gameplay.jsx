@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../style/gameplay.css'
 
 
 export default function GamePlay(props) {
@@ -35,13 +35,13 @@ export default function GamePlay(props) {
             </div>
 
             <div className='quiz-game-options'>
-                <ul>
+                <ul  className='quiz-game-option'>
                     {
                         option.map((item) => {
                             if (item[0] && item[1]) {
                                 return (
-                                    <li>
-                                        <button className={item[0]} onClick={(e)=>handleAnswers(e)}>{item[1]}</button>
+                                    <li  className='quiz-game-each-options' >
+                                        <button id='option-btn' className={item[0]} onClick={(e)=>handleAnswers(e)}>{item[1]}</button>
                                         
                                     </li>
                                 );

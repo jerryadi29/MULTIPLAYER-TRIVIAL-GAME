@@ -53,14 +53,15 @@ export default function ProfileComponent() {
 
         <div>
 
-            <Box sx={{ minWidth: '120' }} >
-                <FormControl fullWidth>
+            <Box sx={{ minWidth: '20vw' }} >
+                <FormControl fullWidth minWidth='20vw'>
                 <InputLabel id="demo-simple-select-label">Game</InputLabel>
 
                     <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
                         onChange={handleChange}
+                        
                     >
                         {
                             categories.map((category,idx) => {
