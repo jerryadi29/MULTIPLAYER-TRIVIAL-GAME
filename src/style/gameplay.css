@@ -1,26 +1,11 @@
 
-.quiz-game-qtn{
-    display: inline-block;
-    width: 40vw;
-    height: 10vh;
-    border: 2px dotted black;
-}
-
-.quiz-game-options{
-    height: 20vw;
-    width:80vh;
-   display: flex;
-   
-   
-}
 
 .quiz-game-each-options{
    list-style-type:lower-alpha;
 
 }
 #option-btn{
-    height: 20%;
-    width: 50%;
-    background-color: rgba(139, 194, 250, 0.251);
+    background-color: none;
     border: none;
+    color:none
 }

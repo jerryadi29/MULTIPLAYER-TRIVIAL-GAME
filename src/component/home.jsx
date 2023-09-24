@@ -6,14 +6,13 @@ import { Grid, Typography,Box,Button } from '@mui/material';
 
 
 
-
-
 export default function HomeComponent() {
 
         let navigate=useNavigate();
 
     return (
         <>
+        
 
                 <Box sx={{
                     height: '80vh',
