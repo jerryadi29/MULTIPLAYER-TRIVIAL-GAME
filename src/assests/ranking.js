@@ -1,7 +1,7 @@
 import data from "./db.json";
 
 
-const ScoreCardData=data.scorecard
+const ScoreCardData=data.users
 
 
 let intialDataWithRanking=[];
@@ -15,8 +15,10 @@ function  getInitialData(){
 
 function getRankedData(){
   const tempData=getInitialData();
+  
   tempData.sort((a,b)=>b.score-a.score);
-  const rankedData=tempData.map(mapDataWithRank)
+  const rankedData=tempData.map(mapDataWithRank);
+  console.log(rankedData)
   return rankedData;
 }
 

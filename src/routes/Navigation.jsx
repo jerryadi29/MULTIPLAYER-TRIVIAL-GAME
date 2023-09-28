@@ -121,7 +121,7 @@ export default function NavigationComponent(props) {
                                     
                                         {signup ? null :
                                             <NavLink to='/registration' style={style}>
-                                                Sign Up
+                                                Sign In
                                             </NavLink>
                                         }
                                     

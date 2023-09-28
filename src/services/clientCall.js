@@ -1,24 +1,9 @@
 import axios from "axios";
 import http from '../http';
 import { QUIZ_API_KEY } from '../utils/apikey';
+import { flushSync } from "react-dom";
 
 
-// const postQuizData = async (data) => {
-   
-//     try {
-//         let res = await  http.post('/data',
-//         JSON.stringify(data),
-//         {
-            
-//             withCredentials: true
-//         }
-//     );
-      
-//     }
-//     catch (err) {
-//         console.log('error', err.name)
-//     }
-// }
 
 
 const getQuizData = async () => {
@@ -58,7 +43,12 @@ const getQuizCategoryData = async (category) => {
 
 }
 
+const userLoggedIn=async (loggedIn,userDetail)=>{
+    console.log(userDetail)
+   return {loggedIn,userDetail}
+
+}
 
 
 
-export { getQuizData,getQuizCategoryData};
+export { getQuizData,getQuizCategoryData,userLoggedIn};

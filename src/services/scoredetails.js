@@ -1,11 +1,10 @@
+import http from '../http'
 
-import http from 'src/http.js';
 
-
-export default getScoreCard=async()=>{
+ const getScoreCard=async()=>{
     try{
-        let res=await http.get('/scorecard');
-        console.log(res);
+        let res=await http.get('/users');
+     
     }catch(error){
         console.error('error is :' , error);
         return [];
@@ -13,4 +12,27 @@ export default getScoreCard=async()=>{
     
 }
 
+
+ const  postUserScore = async (data,userID) => {
+   
+    let scoreData={"score":data};
+
+    try {
+        let res = await  http.patch('/users/'+userID,
+        JSON.stringify(scoreData),
+        
+        {
+            
+            withCredentials: true
+        }
+    );
+    
+    }
+    catch (err) {
+        console.log('error', err.name)
+    }
+  
+}
+
 getScoreCard();
+export {postUserScore,getScoreCard}

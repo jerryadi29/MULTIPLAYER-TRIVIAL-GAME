@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { getQuizCategoryData } from '../services/clientCall';
+import { getQuizCategoryData, userLoggedIn } from '../services/clientCall';
 import GamePlay from './gameplay';
 import { CircularProgress, Box, Typography, Stack, Button } from '@mui/material';
 import { createTheme, alpha, getContrastRatio, ThemeProvider } from '@mui/material/styles';
-
+import { postUserScore } from '../services/scoredetails';
 
 const violetBase = '#7F00FF';
 const violetMain = alpha(violetBase, 0.7);
@@ -40,7 +40,6 @@ export default function GameComponent() {
 
             try {
                 let res = await getQuizCategoryData(paramName.gameId);
-                console.log(res);
                 setData(res);
                 apiCall = true;
                 setVal(res[next.idx]);
@@ -86,6 +85,10 @@ export default function GameComponent() {
 
         if (next.idx >= 19 || next.end) {
             navigate('/leaderboard');
+            const {loggedIn,userDetail}=userLoggedIn();
+            console.log(userDetail)
+            // postUserScore(score,userDetail.length);
+          
         }
 
 
@@ -216,7 +219,8 @@ export default function GameComponent() {
                      color="violet"
                     onClick={() => {
                         next.end = true
-                        setNext({ ...next, end: next.end })
+                        setNext({ ...next, end: next.end });
+                        postUserScore(score);
                     }}>
                         submit
                     </Button>

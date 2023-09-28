@@ -41,13 +41,15 @@ const LeaderBoardComponent = () => {
                     </TableHead>
 
                     <TableBody>
+                       
                         {
+                           
                             ranking.map((players) => {
 
                                 return (
                                     <TableRow className='tablerow'>
                                         <TableCell align="center">{players.rank ? players.rank : "nill"}</TableCell>
-                                        <TableCell align="center">{players.name}</TableCell>
+                                        <TableCell align="center">{players.firstname }</TableCell>
                                         <TableCell align="center">{players.score}</TableCell>
                                     </TableRow>
                                 );

@@ -1,15 +1,18 @@
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 import { DevTool } from "@hookform/devtools";
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import http from '../http';
 import { calculateNewValue } from "@testing-library/user-event/dist/utils";
-import NavigationComponent from "../routes/Navigation";
+import { userLoggedIn } from "../services/clientCall";
+
 
 export const RegistrationComponent = () => {
 
     const navigate = useNavigate();
+    const [loggedIn,setLoggedIn]=useState(false);
 
 
     const { register, control, handleSubmit, formState: { errors } } = useForm({
@@ -17,7 +20,8 @@ export const RegistrationComponent = () => {
             firstname: "",
             lastname: "",
             emailid: "",
-            password: ""
+            password: "",
+           score:0
         }
     });
 
@@ -38,11 +42,14 @@ export const RegistrationComponent = () => {
 
 
             if (res.status == 201) {
+                setLoggedIn(true);
+                userLoggedIn(loggedIn,data);
+
                 toast.success('successfully registered', {
                     position: toast.POSITION.BOTTOM_CENTER
                 });
                 setTimeout(() => {
-                    navigate('/leaderboard');
+                    navigate('/');
                 }, 1000)
             }
 

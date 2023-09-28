@@ -15,7 +15,7 @@ export default function GamePlay(props) {
 
     const handleAnswers = (e) => {
         if (e.target.id === correctVal) {
-            setScore(score + 1);
+            setScore((score)=>score + 1);
             toast.success('Right', {
                 position: "top-center",
                 autoClose: 1200,
