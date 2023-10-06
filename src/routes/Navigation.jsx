@@ -78,6 +78,15 @@ export default function NavigationComponent(props) {
                                 }
                             </Button>
 
+                            
+                            <Button variant='text' onClick={handleClose} >
+                                {htp ? null :
+                                    <NavLink to='/feedback' style={style}>
+                                        Feedback
+                                    </NavLink>
+                                }
+                            </Button>
+
 
 
 

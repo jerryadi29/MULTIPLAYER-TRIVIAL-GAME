@@ -9,6 +9,7 @@ import ProfileComponent from '../component/profile';
 import { Route, Routes } from 'react-router-dom';
 import NavigationComponent from './Navigation';
 import { Typography } from '@mui/material';
+import FeedbackComponent from '../component/feedback';
 
 const LazyGameComponent = lazy(() =>  import('../component/game') )
 
@@ -41,6 +42,8 @@ export default function RoutesComponent() {
 
 
         } />
+
+        <Route path='feedback' element={<FeedbackComponent></FeedbackComponent>}/>
 
 
 
