@@ -17,7 +17,7 @@ own in the issue section (if you experience any bugs in the application or you w
 1. Make sure to star the repository before going ahead.
 2. Fork the repo. (Click on the fork button in the top right corner).
 3. Clone the forked repo to your local machine.
-  > https://github.com/jerryadi29/MULTIPLAYER-TRIVIAL-GAME.git
+ (https://github.com/jerryadi29/MULTIPLAYER-TRIVIAL-GAME.git) 
 4. Change the present working directory.
    > cd MULTIPLAYER-TRIVIAL-GAME
 5.Create a new branch.
