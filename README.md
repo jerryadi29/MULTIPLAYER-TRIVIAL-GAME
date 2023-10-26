@@ -20,10 +20,13 @@ own in the issue section (if you experience any bugs in the application or you w
  (https://github.com/jerryadi29/MULTIPLAYER-TRIVIAL-GAME.git) 
 4. Change the present working directory.
    > cd MULTIPLAYER-TRIVIAL-GAME
-5.Create a new branch.
+
+5. Create a new branch.
   > git checkout -b new-branch
-6.Start the frontend
+
+6. Start the frontend
   > npm start
-7.Start the Backend
+
+7. Start the Backend
   > npx json-server src/assests/db.json --watch --port 3000
 
