@@ -4,11 +4,10 @@ import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { useContext } from "react";
 import http from '../http';
-import { AuthContext } from "../context/authprovider";
+
 
 export const LoginComponent = () => {
 
-    const { setauth } = useContext(AuthContext)
     const { register, control, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
             emailid: "",
@@ -30,7 +29,7 @@ export const LoginComponent = () => {
                 }
             );
 
-           setauth(data);
+         
 
         } catch(err) {
                 if(res.status!=200){

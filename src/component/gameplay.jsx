@@ -2,9 +2,11 @@ import React from 'react';
 import '../style/gameplay.css'
 import { Box, Card, CardContent, Grid, Paper, Typography, Button } from '@mui/material';
 import { toast, ToastContainer } from 'react-toastify';
+import { gameContext } from '../context/gameProvider';
 
 
 export default function GamePlay(props) {
+    // console.log(props);
     const { val, correctVal, score, setScore, handleQuestion, setNext, next, Qtn } = props.details;
     const options = { ...val.answers };
     const option = Object.entries(options);

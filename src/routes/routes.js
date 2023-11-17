@@ -11,7 +11,9 @@ import NavigationComponent from './Navigation';
 import { Typography } from '@mui/material';
 import FeedbackComponent from '../component/feedback';
 
-const LazyGameComponent = lazy(() =>  import('../component/game') )
+
+
+const LazyGameComponent = lazy(() => import('../component/game'))
 
 
 export default function RoutesComponent() {
@@ -20,7 +22,7 @@ export default function RoutesComponent() {
       <NavigationComponent current={{ home: false, htp: false, leaderboard: false, profile: false, signup: false }}></NavigationComponent>
 
 
- 
+
       <Routes>
         <Route path='/' element={<HomeComponent></HomeComponent>} >
 
@@ -43,7 +45,10 @@ export default function RoutesComponent() {
 
         } />
 
-        <Route path='feedback' element={<FeedbackComponent></FeedbackComponent>}/>
+        <Route path='feedback' element={
+          <FeedbackComponent>
+
+          </FeedbackComponent>} />
 
 
 

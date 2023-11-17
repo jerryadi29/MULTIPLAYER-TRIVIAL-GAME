@@ -1,7 +1,5 @@
 import React from 'react'
-import NavigationComponent from '../routes/Navigation'
 import { Link, Outlet, useNavigate } from 'react-router-dom'
-import GameComponent from './game';
 import { Grid, Typography,Box,Button } from '@mui/material';
 
 

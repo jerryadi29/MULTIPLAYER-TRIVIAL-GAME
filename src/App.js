@@ -1,12 +1,19 @@
 import './App.css';
-import NavigationComponent from './routes/Navigation';
 import RoutesComponent from './routes/routes';
 import { BrowserRouter } from 'react-router-dom';
+import { FeedBackContextProvider } from './context/feedbackProvider'
+import { GameContextProvider } from './context/gameProvider';
+
 function App() {
   return (
     <div className="App">
+
       <BrowserRouter>
-        <RoutesComponent></RoutesComponent>
+      <GameContextProvider>
+          <FeedBackContextProvider>
+            <RoutesComponent></RoutesComponent>
+          </FeedBackContextProvider>
+          </GameContextProvider>
       </BrowserRouter>
 
     </div>

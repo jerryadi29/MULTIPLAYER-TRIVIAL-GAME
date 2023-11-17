@@ -1,29 +1,58 @@
 import { Box, Container, FormControl, InputLabel, Stack, TextField, Typography ,Rating,Button} from '@mui/material'
 import Textarea from '@mui/joy/Textarea';
-import React, { useState } from 'react'
-export default function FeedbackComponent() {
-    const [value,setValue]=useState(null);
-    const [reviewOne,setReviewOne]=useState('');
-    const [reviewTwo,setReviewTwo]=useState('');
+import React, { useState,useContext } from 'react';
+import { feedBackContext } from '../context/feedbackProvider';
 
-    const handleSubmit=(e)=>{
-        e.preventDefault()
-    //   console.log({value});
+
+export default function FeedbackComponent() {
+
+
+    const context=useContext(feedBackContext);
+    const [reviewOne,setReviewOne]=useState(context.initialState.reviewOne);
+    const [reviewTwo,setReviewTwo]=useState(context.initialState.reviewTwo);
+    const [value,setVal]=useState(context.initialState.value);
+    const [feed,setFeed]=useState(context);
+
+
+    const handleSetReviewOne=(val)=>{
+        setReviewOne(val);
     }
+
+    const handleSetReviewTwo=(val)=>{
+        setReviewTwo(val);
+    }
+
+    const handleSetVal=(val)=>{
+        setVal(val)
+    }
+
+
+    const handleFeed=(e)=>{
+        
+        console.log(reviewOne,reviewTwo,value)
+       
+    }
+    
+  
+   
+    
+    
    
 
     return (
         <>
             <Container sx={{ height: '80vh', width: '50vw' }} >
 
-                <Box component='form' sx={{ height: '100%', width: '80%', display: 'flex', flexDirection: 'column', flexWrap: 'nowrap', justifyContent: 'flex-start', alignItems: 'center' }} >
+                <Box component='form'
+                 onClick={handleFeed}
+                sx={{ height: '100%', width: '80%', display: 'flex', flexDirection: 'column', flexWrap: 'nowrap', justifyContent: 'flex-start', alignItems: 'center' }} >
 
                     <FormControl
                         variant='standard'
                         sx={{
                             rowGap: '50px'
                         }}
-                        onClick={handleSubmit}
+                       
                     >
                         <div>
                             <InputLabel htmlFor='question-1'></InputLabel>
@@ -31,8 +60,11 @@ export default function FeedbackComponent() {
                                 Do you find the game is interesting?
                             </Typography>
                             <Textarea
-                                value={reviewOne}
-                                onChange={(e)=>setReviewOne(e.target.value)}
+                              value={reviewOne}
+                              onChange={(e)=>{
+                               handleSetReviewOne(e.target.value)
+                             
+                            }}
                                 disabled={false}
                                 minRows={4}
                                 size="lg"
@@ -49,7 +81,9 @@ export default function FeedbackComponent() {
                             </Typography>
                             <Textarea
                               value={reviewTwo}
-                              onChange={(e)=>setReviewTwo(e.target.value)}
+                              onChange={(e)=>{
+                                handleSetReviewTwo(e.target.value)
+                            }}
                                 disabled={false}
                                 minRows={4}
                                 size="lg"
@@ -68,11 +102,10 @@ export default function FeedbackComponent() {
 
                             <Rating
                              name='rating'
-                            value={value}
+                             value={value}
                             size="large"
                             onChange={(e,newValue)=>{
-                                setValue(newValue)
-                                console.log({value})
+                               handleSetVal(newValue)
                             }}
                             
                             
@@ -81,7 +114,9 @@ export default function FeedbackComponent() {
                         </div>
 
                         <div>
-                            <Button variant='contained' size='medium' >Post</Button>
+                            <Button 
+                           
+                            variant='contained' size='medium' >Post</Button>
                         </div>
 
                     </FormControl>

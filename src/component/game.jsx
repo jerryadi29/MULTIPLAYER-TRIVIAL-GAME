@@ -1,10 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState,useContext,useReducer } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { getQuizCategoryData, userLoggedIn } from '../services/clientCall';
 import GamePlay from './gameplay';
 import { CircularProgress, Box, Typography, Stack, Button } from '@mui/material';
 import { createTheme, alpha, getContrastRatio, ThemeProvider } from '@mui/material/styles';
 import { postUserScore } from '../services/scoredetails';
+import { gameContext } from '../context/gameProvider';
 
 const violetBase = '#7F00FF';
 const violetMain = alpha(violetBase, 0.7);
@@ -18,13 +19,15 @@ export default function GameComponent() {
 
 
     const paramName = useParams();
-    const [data, setData] = useState([]);
-    const [val, setVal] = useState('');
-    const [correctVal, setCorrectVal] = useState();
-    const [score, setScore] = useState(0);
-    const [timer, setTimer] = useState(45);
-    const [next, setNext] = useState({ status: false, idx: 1, end: false });
 
+    const [initialGameState,dispatch]=useContext(gameContext)
+    
+    const [data, setData] = useState(initialGameState.data);
+    const [val, setVal] = useState(initialGameState.val);
+    const [correctVal, setCorrectVal] = useState(initialGameState.correctVal);
+    const [score, setScore] = useState(initialGameState.score);
+    const [timer, setTimer] = useState(initialGameState.timer);
+    const [next, setNext] = useState(initialGameState.next);
 
 
 
@@ -41,8 +44,13 @@ export default function GameComponent() {
             try {
                 let res = await getQuizCategoryData(paramName.gameId);
                 setData(res);
+                
+                dispatch({type:'RESPONSE',data:res});
                 apiCall = true;
                 setVal(res[next.idx]);
+                dispatch({type:'VALUE',val:res[next.idx]});
+              
+                
 
             } catch (err) {
                 console.log('ereor while setting the data')
@@ -102,12 +110,16 @@ export default function GameComponent() {
     const handleQuestion = (dismiss) => {
 
         setTimer(45);
+        dispatch({type:'TIMER',timer:45})
         next.idx += 1;
         setNext({ ...next, idx: next.idx });
+        dispatch({type:'NEXT',next:{ ...next, idx: next.idx }})
         let currentVal = data[next.idx]
         setVal(currentVal);
+        dispatch({type:'VALUE',val:currentVal});
+
         setCorrectVal(currentVal.correct_answer);
-       
+        dispatch({type:'CORRECT_VAL',correctVal:correctVal})
 
     }
 
@@ -197,7 +209,7 @@ export default function GameComponent() {
 
 
 
-                <GamePlay details={{ val, correctVal, score, setNext, next, setScore, handleQuestion, Qtn }}></GamePlay>
+                <GamePlay details={{ val, correctVal, score, setScore, handleQuestion, setNext, next, Qtn}}></GamePlay>
 
 
                 <Stack direction='row' rowGap={3} columnGap={3}>
@@ -207,7 +219,8 @@ export default function GameComponent() {
                     variant='outlined' 
                     onClick={() => {
 
-                        setNext({ ...next, status: true });
+                        // setNext({ ...next, status: true });
+                        dispatch({type:'NEXT',status:true})
                         handleQuestion();
 
 
@@ -220,6 +233,7 @@ export default function GameComponent() {
                     onClick={() => {
                         next.end = true
                         setNext({ ...next, end: next.end });
+                        dispatch({type:'NEXT',end: next.end })
                         postUserScore(score);
                     }}>
                         submit
