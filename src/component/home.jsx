@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, Outlet, useNavigate } from 'react-router-dom'
 import { Grid, Typography,Box,Button } from '@mui/material';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 
 
