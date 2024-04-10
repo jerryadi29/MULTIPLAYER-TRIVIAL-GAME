@@ -5,7 +5,7 @@ export const HowTopPlayComponent = () => {
     <>
 
       
-      <div>how to play</div>
+      <div>You can click on let play button</div>
     </>
 
 

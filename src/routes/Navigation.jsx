@@ -4,6 +4,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { deepOrange } from '@mui/material/colors';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
+import { styled } from '@mui/system';
+import Drawer from '@mui/material/Drawer';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const theme = createTheme({
     palette: {
@@ -13,12 +16,45 @@ const theme = createTheme({
         }
     },
 
-})
+    breakpoints:{
+        values:{
+            xs:0,
+            sm:768,
+            md:1024,
+            lg:1200,
+            xl: 1536,
+        }
+    }
 
-const style = {
-    color: 'black',
-    textDecoration: 'none'
+
+
+});
+
+
+
+
+
+const MobileNavigation=()=>{
+
+
+
+    return(
+        <Drawer>
+
+            hi
+
+        </Drawer>
+
+
+    );
+
+
 }
+
+
+
+
+
 
 
 
@@ -30,6 +66,8 @@ export default function NavigationComponent(props) {
     const [anchor, setAnchor] = useState(null);
     const open = Boolean(anchor);
 
+    const media=useMediaQuery((theme)=>theme.breakpoints.down('sm'));
+
 
     const handleClick = (e) => {
         setAnchor(e.currentTarget);
@@ -39,22 +77,29 @@ export default function NavigationComponent(props) {
         setAnchor(null)
     }
 
+    
+    console.log('media',media)
     return (
-
+       
         <ThemeProvider theme={theme}>
-            <AppBar color='primary' position='fixed' sx={{ height: '8vh', display: 'flex', flexDirection: 'row-reverse' }}>
+            
+            <AppBar color='primary' position='fixed'>
 
-
+            
                 <Toolbar>
-
+                    {   
+                  
+                        media ? <MobileNavigation></MobileNavigation> :
+                       
                     <Typography variant='h6' component='h6' gutterBottom='h6'>
-                        <Stack spacing={4} direction='row'  >
+                        <Stack spacing={4}  >
 
-
+                      
                             <Button variant="text" color='secondary'>
                                 {home ? null :
-                                    <NavLink to='/' style={style}>
+                                    <NavLink to='/' >
                                         Home
+                                       
                                     </NavLink>}
                             </Button>
 
@@ -63,7 +108,7 @@ export default function NavigationComponent(props) {
                             <Button variant='text' color='secondary' onClick={handleClose}>
 
                                 {leaderboard ? null :
-                                    <NavLink to='/leaderboard' style={style}>
+                                    <NavLink to='/leaderboard' >
                                         Leader Board
                                     </NavLink>}
                             </Button>
@@ -72,7 +117,7 @@ export default function NavigationComponent(props) {
 
                             <Button variant='text' onClick={handleClose} >
                                 {htp ? null :
-                                    <NavLink to='/howtoplay' style={style}>
+                                    <NavLink to='/howtoplay'>
                                         How to play
                                     </NavLink>
                                 }
@@ -81,7 +126,7 @@ export default function NavigationComponent(props) {
                             
                             <Button variant='text' onClick={handleClose} >
                                 {htp ? null :
-                                    <NavLink to='/feedback' style={style}>
+                                    <NavLink to='/feedback' >
                                         Feedback
                                     </NavLink>
                                 }
@@ -120,7 +165,7 @@ export default function NavigationComponent(props) {
                                  
                             <MenuItem onClose={handleClose}>
                                     {profile ? null :
-                                    <NavLink to='/profile-page' style={style}>
+                                    <NavLink to='/profile-page' >
                                         My Game
                                     </NavLink>
                                 }
@@ -129,7 +174,7 @@ export default function NavigationComponent(props) {
                                 <MenuItem   onClose={handleClose}>
                                     
                                         {signup ? null :
-                                            <NavLink to='/registration' style={style}>
+                                            <NavLink to='/registration' >
                                                 Sign In
                                             </NavLink>
                                         }
@@ -137,21 +182,12 @@ export default function NavigationComponent(props) {
                                 </MenuItem>
 
                             </Menu>
-                           
-
-
-                            
-
-
-
-
-
-
-
+                
 
                         </Stack>
+                       
                     </Typography>
-
+}
                 </Toolbar>
 
 
@@ -159,8 +195,9 @@ export default function NavigationComponent(props) {
 
 
             </AppBar>
+            
         </ThemeProvider>
-
+       
 
 
     )
